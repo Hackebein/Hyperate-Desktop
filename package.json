@@ -1,0 +1,33 @@
+{
+  "name": "hyperate-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": {
+    "name": "Lars \"Hackebein\" Olzem",
+    "email": "hackebein@gmail.com",
+    "url": "https://hackebein.de"
+  },
+  "description": "HypeRate Desktop App",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@rabbitholesyndrome/electron-forge-maker-portable": "^0.1.1",
+    "electron": "^22.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "eslint": "^8.31.0"
+  },
+  "dependencies": {
+    "JSON": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "websocket": "^1.0.34"
+  }
+}

@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Install depencencies
+        run: yarn install
+      -
+        name: Build project
+        run: yarn make
+      -
+        name: Release build
+        uses: actions/upload-artifact@v3
+        with:
+          name: Latest build
+          path: out/make/zip/win32/x64/*.zip

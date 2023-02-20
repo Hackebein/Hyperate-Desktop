@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html.force-hover,
+html:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    /* outline: 0.125rem rgba(255, 255, 255, 0.3); */
+    background: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 0.125rem;
+    border: calc(0.125rem / 2) solid rgba(255, 255, 255, 0.9);
+}
+
+.input[type="text"] {
+    min-width: 0;
+    width: 0;
+    flex: 1 1 0%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: calc(0.125rem / 2) solid rgba(255, 255, 255, 0.9);
+    color: white;
+    margin: 0 0.125rem;
+    padding: 0 0.125rem;
+}
+
+input[type="text"]:focus-visible {
+    outline: none;
+}
+
+input[type=range] {
+    min-width: 0;
+    width: 0;
+    flex: 1 1 0%;
+    margin: 0 0.125rem;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: rgba(0, 0, 0, 0.9);
+    border: 0;
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -8.8px;
+    width: 16px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000000;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #030303;
+}
+
+.panel {
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - (0.25rem * 2));
+    margin: 0.25rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+.panel.controlls {
+    top: 0;
+    flex-direction: row-reverse;
+}
+
+.panel.add-tracker {
+    bottom: 0;
+    max-width: calc(300px - (0.25rem * 2));
+}
+
+html.force-hover .panel,
+html:hover .panel {
+    opacity: 1;
+}
+
+.panel .panel-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+#drag {
+    -webkit-app-region: drag;
+}
+
+body {
+    user-select: none;
+}
+
+#app {
+    /* background: rgba(255, 255, 255, 0.3); */
+    height: calc(100vh - 0.125rem - 0.125rem);
+    margin: 0.125rem;
+    display: flex;
+    z-index: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.heart-rate {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - (0.125rem * 2));
+    width: 100px;
+}
+
+.heart-rate>* {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.heart-rate .background {
+    z-index: 0;
+}
+
+.heart-rate .background.opacity-0 {
+    opacity: 0;
+}
+
+.heart-rate .background.opacity-0 {
+    opacity: 0;
+}
+
+.heart-rate .background.opacity-1 {
+    opacity: 0.1;
+}
+
+.heart-rate .background.opacity-2 {
+    opacity: 0.2;
+}
+
+.heart-rate .background.opacity-3 {
+    opacity: 0.3;
+}
+
+.heart-rate .background.opacity-4 {
+    opacity: 0.4;
+}
+
+.heart-rate .background.opacity-5 {
+    opacity: 0.5;
+}
+
+.heart-rate .background.opacity-6 {
+    opacity: 0.6;
+}
+
+.heart-rate .background.opacity-7 {
+    opacity: 0.7;
+}
+
+.heart-rate .background.opacity-8 {
+    opacity: 0.8;
+}
+
+.heart-rate .background.opacity-9 {
+    opacity: 0.9;
+}
+
+.heart-rate .background.opacity-10 {
+    opacity: 1;
+}
+
+.heart-rate .data {
+    z-index: 1;
+}
+
+.heart-rate .data>* {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.heart-rate .data .identicator {
+    top: 15%;
+}
+
+.heart-rate .data .heart_rate {
+    top: calc((100vh - (0.125rem * 2) - (2rem / 2)) / 3);
+    font-size: 2rem;
+}
+
+.heart-rate .data .last_update {
+    top: 80%;
+    text-align: left;
+    left: 65px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    font-size: 0.625rem;
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    margin-left: calc(100px / -2);
+    height: 90px;
+    margin-top: calc((90px / -2) + ((100vh - (0.125rem * 2) - 90px) / 2));
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+}
+
+.heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}

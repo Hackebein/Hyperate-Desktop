@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="force-hover">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>HypeRate Desktop</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="heart_rate_template" class="heart-rate hidden">
+            <div class="background opacity-8">
+                <div class="heart"></div>
+            </div>
+            <div class="data">
+                <div class="identicator"></div>
+                <div class="heart_rate"></div>
+                <div class="last_update"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel controlls">
+        <div class="button" id="close">&#10006;</div>
+        <div class="button" id="drag"></div>
+        <input type="range" min="0" max="10" value="8" id="opacity">
+    </div>
+    <div class="panel add-tracker">
+        <input class="input" type="text" id="add-id" placeholder="ID">
+        <input class="input" type="text" id="add-name" placeholder="Name">
+        <div class="button" id="add">&#10133;</div>
+    </div>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
