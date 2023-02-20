@@ -6,7 +6,7 @@ on:
       - 'master'
 
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
     steps:
       -
@@ -20,8 +20,7 @@ jobs:
         run: yarn make
       -
         name: Release build
-        uses: actions/upload-artifact@v3
+        uses: softprops/action-gh-release@v1
         with:
-          name: Latest build
-          if-no-files-found: error
-          path: out/make/**/*.*
+          fail_on_unmatched_files: true
+          files: out/make/**/*.*
