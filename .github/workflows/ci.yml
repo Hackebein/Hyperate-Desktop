@@ -2,8 +2,10 @@ name: ci
 
 on:
   push:
+    braches:
+      - '**'
     tags:
-      - "v*.*.*"
+      - "v*"
 
 jobs:
   build:
