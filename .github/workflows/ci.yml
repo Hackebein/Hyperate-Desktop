@@ -23,4 +23,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Latest build
-          path: out/make/zip/win32/x64/*.zip
+          if-no-files-found: error
+          path: out/make/**/*.*
