@@ -76,7 +76,7 @@ client.on('connect', function (connection) {
         client.connect(API_URL);
     });
     connection.on("message", function (message) {
-        if (!message.type === "utf8") {
+        if (message.type !== "utf8") {
             return console.error("Message is not of type \"UTF8\"");
         }
         try {
